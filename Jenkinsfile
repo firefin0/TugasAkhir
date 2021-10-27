@@ -26,7 +26,7 @@ pipeline {
       steps {
         echo 'deploying the aplication...'
         sh """
-            docker run -d --rm -p 3000:3000 node-app:$BUILD_NUMBER 
+            docker service update --image node-app:$BUILD_NUMBER welcomeTA 
         """
       }
     }
